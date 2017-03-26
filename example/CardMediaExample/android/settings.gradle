@@ -1,0 +1,3 @@
+rootProject.name = 'CardMediaExample'
+
+include ':app'

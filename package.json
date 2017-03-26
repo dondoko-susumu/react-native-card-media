@@ -1,0 +1,29 @@
+{
+  "name": "react-native-card-media",
+  "version": "0.0.1",
+  "description": "Multiple image component for React Native",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dondoko-susumu/react-native-card-media.git"
+  },
+  "author": "Ken Kubota <kkbt2003@gmail> (https://github.com/dondoko-susumu/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dondoko-susumu/react-native-card-media/issues"
+  },
+  "homepage": "https://github.com/dondoko-susumu/react-native-card-media#readme",
+  "devDependencies": {
+    "babel-eslint": "^7.2.0",
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "react": "^15.4.2",
+    "react-native": "^0.42.3"
+  }
+}
