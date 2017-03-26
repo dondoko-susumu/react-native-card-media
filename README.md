@@ -1,5 +1,5 @@
 ## react-native-card-media
-Multiple image component for React Native.
+Card Media component for React Native.
 
 ![screenshot](images/screenshot.png)
 

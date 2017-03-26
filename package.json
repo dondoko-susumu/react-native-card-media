@@ -1,7 +1,7 @@
 {
   "name": "react-native-card-media",
   "version": "0.0.1",
-  "description": "Multiple image component for React Native",
+  "description": "Card Media component for React Native",
   "main": "index.js",
   "scripts": {
     "test": "eslint *.js ./components/*.js ./example/*/*.js"
