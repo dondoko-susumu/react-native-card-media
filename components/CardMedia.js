@@ -10,19 +10,16 @@ import {
   View,
 } from 'react-native';
 
-import {
-  Icon,
-  COLOR,
-  TYPO,
-} from 'react-native-material-design';
-
 export default class CardMedia extends Component {
 
   static propTypes = {
     style: PropTypes.object,
     files: PropTypes.array,
     title: PropTypes.string,
+    titleStyle: PropTypes.object,
     onPress: PropTypes.func,
+    imageIconView: PropTypes.func,
+    imageCountStyle: PropTypes.object,
   };
 
   static defaultProps = {
@@ -35,8 +32,11 @@ export default class CardMedia extends Component {
     const {
       style,
       title,
+      titleStyle,
       files,
       onPress,
+      imageIconView,
+      imageCountStyle,
     } = this.props;
 
     return (
@@ -106,7 +106,7 @@ export default class CardMedia extends Component {
         {files.length <= 4 &&
           <View style={styles.overlay}>
             <Text
-              style={[TYPO.paperFontHeadline, COLOR.paperGrey50]}
+              style={titleStyle}
               numberOfLines={1}
               ellipsizeMode={'tail'}
               onPress={onPress}
@@ -118,7 +118,7 @@ export default class CardMedia extends Component {
         {files.length > 4 &&
           <View style={[styles.overlay, { flex: 1, flexDirection: 'row', justifyContent: 'space-between' }]}>
             <Text
-              style={[TYPO.paperFontHeadline, COLOR.paperGrey50, { flex: 1 }]}
+              style={[titleStyle, { flex: 1 }]}
               numberOfLines={1}
               ellipsizeMode={'tail'}
               onPress={onPress}
@@ -126,14 +126,9 @@ export default class CardMedia extends Component {
               {title}
             </Text>
             <View style={{ flexDirection: 'row' }}>
-              <Icon
-                name="image"
-                color="#fafafa"
-                size={24}
-                style={styles.imageIcon}
-              />
+              {imageIconView()}
               <Text
-                style={[TYPO.paperFontTitle, COLOR.paperGrey50, styles.imageCount]}
+                style={[imageCountStyle, styles.imageCount]}
               >
                 {files.length}
               </Text>
@@ -179,8 +174,5 @@ const styles = StyleSheet.create({
   },
   imageCount: {
     top: 4,
-  },
-  imageIcon: {
-    top: 6,
   },
 });
