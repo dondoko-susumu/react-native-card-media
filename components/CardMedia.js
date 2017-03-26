@@ -13,13 +13,13 @@ import {
 export default class CardMedia extends Component {
 
   static propTypes = {
-    style: PropTypes.object,
+    style: PropTypes.any,
     files: PropTypes.array,
     title: PropTypes.string,
-    titleStyle: PropTypes.object,
+    titleStyle: PropTypes.any,
     onPress: PropTypes.func,
     imageIconView: PropTypes.func,
-    imageCountStyle: PropTypes.object,
+    imageCountStyle: PropTypes.any,
   };
 
   static defaultProps = {
@@ -126,7 +126,7 @@ export default class CardMedia extends Component {
               {title}
             </Text>
             <View style={{ flexDirection: 'row' }}>
-              {imageIconView()}
+              {imageIconView && imageIconView()}
               <Text
                 style={[imageCountStyle, styles.imageCount]}
               >

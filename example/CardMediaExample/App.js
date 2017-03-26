@@ -11,18 +11,32 @@ import {
   COLOR,
   TYPO,
   Icon,
-  IconToggle,
 } from 'react-native-material-design';
 
 import CardMedia from 'react-native-card-media';
 
-const path = 'https://github.com/dondoko-susumu/react-native-card-media/blob/master/example/CardMediaExample/media/';
-const files = [
-  `${path}kids_play_640.jpeg?raw=true`,
-  `${path}road_640.jpg?raw=true`,
-  `${path}women_640.jpeg?raw=true`,
-  `${path}sea_kids_640.jpeg?raw=true`,
-  `${path}temple_640.jpeg?raw=true`,
+const path = 'https://raw.githubusercontent.com/dondoko-susumu/react-native-card-media/master/example/CardMediaExample/media/';
+const files1 = [
+  `${path}kids_play_640.jpeg`,
+];
+
+const files2 = [
+  `${path}kids_play_640.jpeg`,
+  `${path}sea_kids_640.jpeg`,
+];
+
+const files3 = [
+  `${path}kids_play_640.jpeg`,
+  `${path}temple_640.jpeg`,
+  `${path}road_640.jpg`,
+];
+
+const files5 = [
+  `${path}kids_play_640.jpeg`,
+  `${path}road_640.jpg`,
+  `${path}women_640.jpeg`,
+  `${path}sea_kids_640.jpeg`,
+  `${path}temple_640.jpeg`,
 ];
 
 export default class App extends Component {
@@ -50,7 +64,21 @@ export default class App extends Component {
             style={{ height: 200 }}
             title="Title"
             titleStyle={[TYPO.paperFontHeadline, COLOR.paperGrey50]}
-            files={files}
+            files={files2}
+            onPress={() => this.onPress()}
+          />
+          <Card.Body>
+            <Text>
+              Multiple image component for React Native
+            </Text>
+          </Card.Body>
+        </Card>
+        <Card>
+          <CardMedia
+            style={{ height: 200 }}
+            title="Title"
+            titleStyle={[TYPO.paperFontHeadline, COLOR.paperGrey50]}
+            files={files5}
             onPress={() => this.onPress()}
             imageIconView={this.renderImageIconView}
             imageCountStyle={[TYPO.paperFontTitle, COLOR.paperGrey50]}
