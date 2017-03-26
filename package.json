@@ -4,7 +4,7 @@
   "description": "Multiple image component for React Native",
   "main": "index.js",
   "scripts": {
-    "test": "eslint ."
+    "test": "eslint *.js ./components/*.js ./example/*/*.js"
   },
   "repository": {
     "type": "git",
