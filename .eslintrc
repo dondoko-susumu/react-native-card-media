@@ -4,13 +4,20 @@
     "browser": true,
     "mocha": true,
     "node": true,
+    "es6": true,
   },
   "rules": {
-    "react/jsx-uses-react": 2,
-    "react/jsx-uses-vars": 2,
-    "react/react-in-jsx-scope": 2,
-    "react/jsx-filename-extension": 0,
+    "react/jsx-uses-react": ["error"],
+    "react/jsx-uses-vars": ["error"],
+    "react/react-in-jsx-scope": ["error"],
+    "react/jsx-filename-extension": ["off"],
+    "no-use-before-define": ["off"],
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true }],
+    "react/prefer-stateless-function": ["off"],
+    "react/forbid-prop-types": ["off"],
+    "react/require-default-props": ["off"],
   },
+  "parser": "babel-eslint",
   "plugins": [
     "react"
   ]
