@@ -63,7 +63,7 @@ export default class App extends Component {
           <CardMedia
             style={{ height: 200 }}
             title="Title"
-            titleStyle={[TYPO.paperFontHeadline, COLOR.paperGrey50]}
+            titleStyle={{ fontSize: 24, fontWeight: '400', lineHeight: 32, color: '#fafafa' }}
             files={files2}
             onPress={() => this.onPress()}
           />
@@ -77,11 +77,11 @@ export default class App extends Component {
           <CardMedia
             style={{ height: 200 }}
             title="Title"
-            titleStyle={[TYPO.paperFontHeadline, COLOR.paperGrey50]}
+            titleStyle={{ fontSize: 24, fontWeight: '400', lineHeight: 32, color: '#fafafa' }}
             files={files5}
             onPress={() => this.onPress()}
             imageIconView={this.renderImageIconView}
-            imageCountStyle={[TYPO.paperFontTitle, COLOR.paperGrey50]}
+            imageCountStyle={{ fontSize: 20, fontWeight: '500', lineHeight: 28, color: '#fafafa' }}
           />
           <Card.Body>
             <Text>
