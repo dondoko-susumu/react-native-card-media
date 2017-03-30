@@ -1,5 +1,5 @@
 ## react-native-card-media
-Card Media component for React Native.
+Card Media component for React Native. Also supports multiple image layout.
 
 ![screenshot](images/screenshot.png)
 
