@@ -7,6 +7,7 @@ import {
   Image,
   StyleSheet,
   Text,
+  TouchableWithoutFeedback,
   View,
 } from 'react-native';
 
@@ -20,12 +21,16 @@ export default class CardMedia extends Component {
     onPress: PropTypes.func,
     imageIconView: PropTypes.func,
     imageCountStyle: PropTypes.any,
+    titleTouchable: PropTypes.bool,
+    imageTouchable: PropTypes.bool,
   };
 
   static defaultProps = {
     style: {},
     files: [],
     title: '',
+    titleTouchable: true,
+    imageTouchable: true,
   };
 
   render() {
@@ -37,51 +42,25 @@ export default class CardMedia extends Component {
       onPress,
       imageIconView,
       imageCountStyle,
+      titleTouchable,
+      imageTouchable,
     } = this.props;
 
     return (
       <View style={[styles.cardMedia, style]}>
         {files.length === 1 &&
-          <View style={[styles.cardMediaImages, style, { flexDirection: 'row' }]}>
-            <Image
-              source={{ uri: `${files[0]}` }}
-              style={{ flex: 1 }}
-            />
-          </View>
-        }
-        {files.length === 2 &&
-          <View style={[styles.cardMediaImages, style, { flexDirection: 'row' }]}>
-            <Image
-              source={{ uri: `${files[0]}` }}
-              style={{ flex: 1 }}
-            />
-            <Image
-              source={{ uri: `${files[1]}` }}
-              style={{ flex: 1 }}
-            />
-          </View>
-        }
-        {files.length === 3 &&
-          <View style={[styles.cardMediaImages, style, { flexDirection: 'row' }]}>
-            <Image
-              source={{ uri: `${files[0]}` }}
-              style={{ flex: 2 }}
-            />
-            <View style={[style, { flex: 1, flexDirection: 'column' }]}>
+          <TouchableWithoutFeedback onPress={onPress} disabled={!imageTouchable}>
+            <View style={[styles.cardMediaImages, style, { flexDirection: 'row' }]}>
               <Image
-                source={{ uri: `${files[1]}` }}
-                style={{ flex: 1 }}
-              />
-              <Image
-                source={{ uri: `${files[2]}` }}
+                source={{ uri: `${files[0]}` }}
                 style={{ flex: 1 }}
               />
             </View>
-          </View>
+          </TouchableWithoutFeedback>
         }
-        {files.length >= 4 &&
-          <View style={[styles.cardMediaImages, style, { flexDirection: 'column' }]}>
-            <View style={[style, { flex: 1, flexDirection: 'row' }]}>
+        {files.length === 2 &&
+          <TouchableWithoutFeedback onPress={onPress} disabled={!imageTouchable}>
+            <View style={[styles.cardMediaImages, style, { flexDirection: 'row' }]}>
               <Image
                 source={{ uri: `${files[0]}` }}
                 style={{ flex: 1 }}
@@ -91,49 +70,87 @@ export default class CardMedia extends Component {
                 style={{ flex: 1 }}
               />
             </View>
-            <View style={[style, { flex: 1, flexDirection: 'row' }]}>
+          </TouchableWithoutFeedback>
+        }
+        {files.length === 3 &&
+          <TouchableWithoutFeedback onPress={onPress} disabled={!imageTouchable}>
+            <View style={[styles.cardMediaImages, style, { flexDirection: 'row' }]}>
               <Image
-                source={{ uri: `${files[2]}` }}
-                style={{ flex: 1 }}
+                source={{ uri: `${files[0]}` }}
+                style={{ flex: 2 }}
               />
-              <Image
-                source={{ uri: `${files[3]}` }}
-                style={{ flex: 1 }}
-              />
+              <View style={[style, { flex: 1, flexDirection: 'column' }]}>
+                <Image
+                  source={{ uri: `${files[1]}` }}
+                  style={{ flex: 1 }}
+                />
+                <Image
+                  source={{ uri: `${files[2]}` }}
+                  style={{ flex: 1 }}
+                />
+              </View>
             </View>
-          </View>
+          </TouchableWithoutFeedback>
+        }
+        {files.length >= 4 &&
+          <TouchableWithoutFeedback onPress={onPress} disabled={!imageTouchable}>
+            <View style={[styles.cardMediaImages, style, { flexDirection: 'column' }]}>
+              <View style={[style, { flex: 1, flexDirection: 'row' }]}>
+                <Image
+                  source={{ uri: `${files[0]}` }}
+                  style={{ flex: 1 }}
+                />
+                <Image
+                  source={{ uri: `${files[1]}` }}
+                  style={{ flex: 1 }}
+                />
+              </View>
+              <View style={[style, { flex: 1, flexDirection: 'row' }]}>
+                <Image
+                  source={{ uri: `${files[2]}` }}
+                  style={{ flex: 1 }}
+                />
+                <Image
+                  source={{ uri: `${files[3]}` }}
+                  style={{ flex: 1 }}
+                />
+              </View>
+            </View>
+          </TouchableWithoutFeedback>
         }
         {files.length <= 4 &&
-          <View style={styles.overlay}>
-            <Text
-              style={titleStyle}
-              numberOfLines={1}
-              ellipsizeMode={'tail'}
-              onPress={onPress}
-            >
-              {title}
-            </Text>
-          </View>
-        }
-        {files.length > 4 &&
-          <View style={[styles.overlay, { flex: 1, flexDirection: 'row', justifyContent: 'space-between' }]}>
-            <Text
-              style={[titleStyle, { flex: 1 }]}
-              numberOfLines={1}
-              ellipsizeMode={'tail'}
-              onPress={onPress}
-            >
-              {title}
-            </Text>
-            <View style={{ flexDirection: 'row' }}>
-              {imageIconView && imageIconView()}
+          <TouchableWithoutFeedback onPress={onPress} disabled={!titleTouchable}>
+            <View style={styles.overlay}>
               <Text
-                style={[imageCountStyle, styles.imageCount]}
+                style={titleStyle}
+                numberOfLines={1}
+                ellipsizeMode={'tail'}
               >
-                {files.length}
+                {title}
               </Text>
             </View>
-          </View>
+          </TouchableWithoutFeedback>
+        }
+        {files.length > 4 &&
+          <TouchableWithoutFeedback onPress={onPress} disabled={!titleTouchable}>
+            <View style={[styles.overlay, { flex: 1, flexDirection: 'row', justifyContent: 'space-between' }]}>
+              <Text
+                style={[titleStyle, { flex: 1 }]}
+                numberOfLines={1}
+                ellipsizeMode={'tail'}
+              >
+                {title}
+              </Text>
+              <View style={{ flexDirection: 'row' }}>
+                {imageIconView && imageIconView()}
+                <Text
+                  style={[imageCountStyle, styles.imageCount]}
+                >
+                  {files.length}
+                </Text>
+              </View>
+            </View>
+          </TouchableWithoutFeedback>
         }
       </View>
     );
