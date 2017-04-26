@@ -67,7 +67,7 @@ export default class App extends Component {
       <View style={styles.scene}>
         <ScrollView>
           <View style={styles.container}>
-            <Card>
+            <Card style={styles.cardStyle}>
               <CardMedia
                 style={{ height: 200 }}
                 title="Title"
@@ -81,35 +81,38 @@ export default class App extends Component {
                 </Text>
               </Card.Body>
             </Card>
-            <Card>
+            <Card style={styles.cardStyle}>
               <CardMedia
                 style={{ height: 200 }}
                 title="Title"
                 titleStyle={{ fontSize: 24, fontWeight: '400', lineHeight: 32, color: '#fafafa' }}
                 files={files2}
                 onPress={() => this.onPress()}
+                titleTouchable={false}
+                imageTouchable={false}
               />
               <Card.Body>
                 <Text>
-                  Multiple image component for React Native
+                  disabled titleTouchable & imageTouchable
                 </Text>
               </Card.Body>
             </Card>
-            <Card>
+            <Card style={styles.cardStyle}>
               <CardMedia
                 style={{ height: 200 }}
                 title="Title"
                 titleStyle={{ fontSize: 24, fontWeight: '400', lineHeight: 32, color: '#fafafa' }}
                 files={files3}
                 onPress={() => this.onPress()}
+                imageTouchable={false}
               />
               <Card.Body>
                 <Text>
-                  Multiple image component for React Native
+                  disabled imageTouchable.
                 </Text>
               </Card.Body>
             </Card>
-            <Card>
+            <Card style={styles.cardStyle}>
               <CardMedia
                 style={{ height: 200 }}
                 title="Title"
@@ -123,7 +126,7 @@ export default class App extends Component {
                 </Text>
               </Card.Body>
             </Card>
-            <Card>
+            <Card style={styles.cardStyle}>
               <CardMedia
                 style={{ height: 200 }}
                 title="Title"
@@ -135,7 +138,7 @@ export default class App extends Component {
               />
               <Card.Body>
                 <Text>
-                  Multiple image component for React Native
+                  Multiple image component for React Native.
                 </Text>
               </Card.Body>
             </Card>
@@ -155,5 +158,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+  },
+  cardStyle: {
+    width: 320,
   },
 });

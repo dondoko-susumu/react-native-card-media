@@ -39,6 +39,8 @@ const files5 = [
   onPress={() => this.onPress()}
   imageIconView={this.renderImageIconView}
   imageCountStyle={{ fontSize: 20, fontWeight: '500', lineHeight: 28, color: '#fafafa' }}
+  titleTouchable={false}
+  imageTouchable={false}
 />
 ```
 

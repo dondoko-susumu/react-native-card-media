@@ -1,6 +1,6 @@
 {
   "name": "react-native-card-media",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Card Media component for React Native. Also supports multiple image layout.",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,6 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
     "react": "^15.4.2",
-    "react-native": "^0.42.3"
+    "react-native": "^0.43.4"
   }
 }
