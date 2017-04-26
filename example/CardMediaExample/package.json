@@ -9,7 +9,7 @@
   "dependencies": {
     "react": "16.0.0-alpha.6",
     "react-native": "0.43.4",
-    "react-native-card-media": "0.0.4",
+    "react-native-card-media": "../..",
     "react-native-material-design": "^0.3.7",
     "react-native-vector-icons": "^4.0.0"
   },
