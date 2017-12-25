@@ -18,7 +18,7 @@ Card Media component for React Native. Also supports multiple image layout.
 `npm install react-native-card-media --save`
 
 ## Examples
-[CardMediaExample](https://github.com/dondoko-susumu/react-native-card-media/blob/master/example/CardMediaExample/App.js)
+[CardMediaExample](https://github.com/dondoko-susumu/react-native-card-media-example/blob/master/App.js)
 
 ## Usage
 ```javascript
