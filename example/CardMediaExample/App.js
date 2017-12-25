@@ -1,5 +1,8 @@
+/* @flow */
+
 import React, { Component } from 'react';
 import {
+  Alert,
   ScrollView,
   StyleSheet,
   View,
@@ -45,10 +48,10 @@ const files5 = [
   `${path}temple_640.jpeg`,
 ];
 
-export default class App extends Component {
+export default class App extends Component<{}> {
 
   onPress() {
-    console.log('on Press');
+    Alert.alert('onPress');
   }
 
   renderImageIconView() {
