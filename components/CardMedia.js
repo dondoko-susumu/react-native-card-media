@@ -1,6 +1,6 @@
-import React, {
-  Component,
-} from 'react';
+/* @flow */
+
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import {
@@ -11,11 +11,25 @@ import {
   View,
 } from 'react-native';
 
-export default class CardMedia extends Component {
+import type { StyleObj } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
+
+type Props = {
+  style: StyleObj,
+  files: Array<string>,
+  title: string,
+  titleStyle?: StyleObj,
+  onPress?: () => mixed,
+  imageIconView?: () => mixed,
+  imageCountStyle?: StyleObj,
+  titleTouchable: boolean,
+  imageTouchable: boolean,
+};
+
+export default class CardMedia extends Component<Props> {
 
   static propTypes = {
     style: PropTypes.any,
-    files: PropTypes.array,
+    files: PropTypes.array.isRequired,
     title: PropTypes.string,
     titleStyle: PropTypes.any,
     onPress: PropTypes.func,
