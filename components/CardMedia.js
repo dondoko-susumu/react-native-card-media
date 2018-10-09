@@ -17,6 +17,7 @@ type Props = {
   style: StyleObj,
   files: Array<string>,
   title: string,
+  showTitle:boolean,
   titleStyle?: StyleObj,
   onPress?: () => mixed,
   imageIconView?: () => mixed,
@@ -31,6 +32,7 @@ export default class CardMedia extends Component<Props> {
     style: PropTypes.any,
     files: PropTypes.array.isRequired,
     title: PropTypes.string,
+    showTitle: PropTypes.bool,
     titleStyle: PropTypes.any,
     onPress: PropTypes.func,
     imageIconView: PropTypes.func,
@@ -43,6 +45,7 @@ export default class CardMedia extends Component<Props> {
     style: {},
     files: [],
     title: '',
+    showTitle: true,
     titleTouchable: true,
     imageTouchable: true,
   };
@@ -51,6 +54,7 @@ export default class CardMedia extends Component<Props> {
     const {
       style,
       title,
+      showTitle,
       titleStyle,
       files,
       onPress,
@@ -132,7 +136,7 @@ export default class CardMedia extends Component<Props> {
             </View>
           </TouchableWithoutFeedback>
         }
-        {files.length <= 4 &&
+        {files.length <= 4 && showTitle &&
           <TouchableWithoutFeedback onPress={onPress} disabled={!titleTouchable}>
             <View style={styles.overlay}>
               <Text
@@ -145,7 +149,7 @@ export default class CardMedia extends Component<Props> {
             </View>
           </TouchableWithoutFeedback>
         }
-        {files.length > 4 &&
+        {files.length > 4 && showTitle &&
           <TouchableWithoutFeedback onPress={onPress} disabled={!titleTouchable}>
             <View style={[styles.overlay, { flex: 1, flexDirection: 'row', justifyContent: 'space-between' }]}>
               <Text
@@ -156,6 +160,20 @@ export default class CardMedia extends Component<Props> {
                 {title}
               </Text>
               <View style={{ flexDirection: 'row' }}>
+                {imageIconView && imageIconView()}
+                <Text
+                  style={[imageCountStyle, styles.imageCount]}
+                >
+                  {files.length}
+                </Text>
+              </View>
+            </View>
+          </TouchableWithoutFeedback>
+        }
+        {files.length > 4 && !showTitle &&
+          <TouchableWithoutFeedback onPress={onPress} disabled={!titleTouchable}>
+            <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between' }}>
+              <View style={{flexDirection: 'row', position: 'absolute',bottom: 10, right: 16 }}>
                 {imageIconView && imageIconView()}
                 <Text
                   style={[imageCountStyle, styles.imageCount]}
@@ -189,18 +207,6 @@ const styles = StyleSheet.create({
     paddingBottom: 16,
     paddingLeft: 16,
     paddingRight: 16,
-    backgroundColor: 'rgba(0,0,0,.35)',
-  },
-  ovaerlayMoreImages: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
     backgroundColor: 'rgba(0,0,0,.35)',
   },
   imageCount: {
