@@ -34,6 +34,7 @@ const files5 = [
 <CardMedia
   style={{ height: 200 }}
   title="Title"
+  showTitle={false}
   titleStyle={{ fontSize: 24, fontWeight: '400', lineHeight: 32, color: '#fafafa' }}
   files={files5}
   onPress={() => this.onPress()}
@@ -43,6 +44,19 @@ const files5 = [
   imageTouchable={false}
 />
 ```
+# Properties Explain
+| Prop  | Description |Default |
+| ------------- | ------------- | ------------- |
+| **style**  | CardView style   |None  |
+| **title**  | Title text is shown at below part of card | None  |
+| **showTitle**  | Title is shown or not | true  |
+| **titleStyle**  | Title style | None  |
+| **files**  | Media lists | false  |
+| **onPress**  | Action is called when click in card | None  |
+| **imageIconView**  | Icon is shown near title | None  |
+| **imageCountStyle**  | Icon style | None  |
+| **titleTouchable**  | Title is clickable or not | true  |
+| **imageTouchable**  | Images in card is clickable or not | true  |
 
 ## License
 MIT
