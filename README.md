@@ -30,13 +30,12 @@ const files5 = [
   `${path}temple_640.jpeg`,
 ];
 
-
 <CardMedia
+  files={files5}
   style={{ height: 200 }}
   title="Title"
   showTitle={false}
   titleStyle={{ fontSize: 24, fontWeight: '400', lineHeight: 32, color: '#fafafa' }}
-  files={files5}
   onPress={() => this.onPress()}
   imageIconView={this.renderImageIconView}
   imageCountStyle={{ fontSize: 20, fontWeight: '500', lineHeight: 28, color: '#fafafa' }}
@@ -44,6 +43,7 @@ const files5 = [
   imageTouchable={false}
 />
 ```
+
 ## Props
 | Prop | Description | Type | Default |
 | ------------- | ------------- | ------------- | ------------- |
