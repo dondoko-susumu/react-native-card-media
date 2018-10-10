@@ -44,19 +44,19 @@ const files5 = [
   imageTouchable={false}
 />
 ```
-# Properties Explain
-| Prop  | Description |Default |
-| ------------- | ------------- | ------------- |
-| **style**  | CardView style   |None  |
-| **title**  | Title text is shown at below part of card | None  |
-| **showTitle**  | Title is shown or not | true  |
-| **titleStyle**  | Title style | None  |
-| **files**  | Media lists | false  |
-| **onPress**  | Action is called when click in card | None  |
-| **imageIconView**  | Icon is shown near title | None  |
-| **imageCountStyle**  | Icon style | None  |
-| **titleTouchable**  | Title is clickable or not | true  |
-| **imageTouchable**  | Images in card is clickable or not | true  |
+## Props
+| Prop | Description | Type | Default |
+| ------------- | ------------- | ------------- | ------------- |
+| **files**  | Media lists | Array | **Required**  |
+| **style**  | CardView style   | View Style Object | undefined  |
+| **title**  | Title text is shown at below part of card | String | undefined |
+| **showTitle**  | Title is shown or not | Boolean  | true |
+| **titleStyle**  | Title style | View Style Object | undefined |
+| **onPress**  | Action is called when click in card | Function | undefined |
+| **imageIconView**  | Icon is shown near title | Component | undefined |
+| **imageCountStyle**  | Icon style | View Style Object | undefined |
+| **titleTouchable**  | Title is clickable or not | Boolean | true |
+| **imageTouchable**  | Images in card is clickable or not | Boolean | true |
 
 ## License
 MIT
