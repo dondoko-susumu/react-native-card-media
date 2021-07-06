@@ -39,7 +39,6 @@ const files5 = [
   onPress={(fileIndex) => this.onPress(fileIndex)}
   imageIconView={this.renderImageIconView}
   imageCountStyle={{ fontSize: 20, fontWeight: '500', lineHeight: 28, color: '#fafafa' }}
-  titleTouchable={false}
   imageTouchable={false}
 />
 ```
@@ -55,7 +54,6 @@ const files5 = [
 | **onPress**  | Action is called when click in card | Function | undefined |
 | **imageIconView**  | Icon is shown near title | Component | undefined |
 | **imageCountStyle**  | Icon style | View Style Object | undefined |
-| **titleTouchable**  | Title is clickable or not | Boolean | true |
 | **imageTouchable**  | Images in card is clickable or not | Boolean | true |
 
 ## License
