@@ -36,7 +36,7 @@ const files5 = [
   title="Title"
   showTitle={false}
   titleStyle={{ fontSize: 24, fontWeight: '400', lineHeight: 32, color: '#fafafa' }}
-  onPress={() => this.onPress()}
+  onPress={(fileIndex) => this.onPress(fileIndex)}
   imageIconView={this.renderImageIconView}
   imageCountStyle={{ fontSize: 20, fontWeight: '500', lineHeight: 28, color: '#fafafa' }}
   titleTouchable={false}
