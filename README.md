@@ -51,7 +51,7 @@ const files5 = [
 | **title**  | Title text is shown at below part of card | String | undefined |
 | **showTitle**  | Title is shown or not | Boolean  | true |
 | **titleStyle**  | Title style | View Style Object | undefined |
-| **onPress**  | Action is called when click in card | Function | undefined |
+| **onPress**  | Action is called when click in card <br> you can pass the file index as an argument| Function | undefined |
 | **imageIconView**  | Icon is shown near title | Component | undefined |
 | **imageCountStyle**  | Icon style | View Style Object | undefined |
 | **imageTouchable**  | Images in card is clickable or not | Boolean | true |
