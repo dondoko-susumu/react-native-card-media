@@ -22,7 +22,6 @@ type Props = {
   onPress?: () => mixed,
   imageIconView?: () => mixed,
   imageCountStyle?: StyleObj,
-  titleTouchable: boolean,
   imageTouchable: boolean,
 };
 
@@ -37,7 +36,6 @@ export default class CardMedia extends Component<Props> {
     onPress: PropTypes.func,
     imageIconView: PropTypes.func,
     imageCountStyle: PropTypes.any,
-    titleTouchable: PropTypes.bool,
     imageTouchable: PropTypes.bool,
   };
 
@@ -46,7 +44,6 @@ export default class CardMedia extends Component<Props> {
     files: [],
     title: '',
     showTitle: true,
-    titleTouchable: true,
     imageTouchable: true,
   };
 
@@ -60,7 +57,6 @@ export default class CardMedia extends Component<Props> {
       onPress,
       imageIconView,
       imageCountStyle,
-      titleTouchable,
       imageTouchable,
     } = this.props;
 
