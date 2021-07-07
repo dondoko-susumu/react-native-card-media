@@ -19,7 +19,7 @@ type Props = {
   title: string,
   showTitle:boolean,
   titleStyle?: StyleObj,
-  onPress?: () => mixed,
+  onPress?: (fileIndex:Number) => mixed,
   imageIconView?: () => mixed,
   imageCountStyle?: StyleObj,
   imageTouchable: boolean,
